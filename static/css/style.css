@@ -1,0 +1,327 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Typography */
+body {
+  font-family: "Roboto", "Helvetica Neue", "Arial", sans-serif;
+  line-height: 1.6;
+  color: #6f6f6f;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  background-image: url("/static/image/backgroundAsset.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 0;
+}
+
+main {
+  margin: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 55px;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  font-size: 1.2rem;
+}
+
+h1, h2 {
+  color: #2e2e2e;
+  letter-spacing: 1.5px;
+}
+
+/* Layout */
+.navigator {
+  display: flex;
+  padding: 1.1rem;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(7, 0, 53);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+  position: sticky;
+  z-index: 1;
+  top: 0;
+}
+
+.align-center {
+  text-align: center;
+  list-style: none;
+}
+
+.intro-sect {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
+  background-attachment: fixed;
+  color: #fff;
+  text-align: center;
+  scroll-margin: 50rem;
+}
+
+.brief-intro {
+  display: grid;
+  grid-template-columns: repeat(auto-fit);
+}
+
+.profile-img {
+  background-image: url("/static/image/image2.jpg");
+  width: 14em;
+  height: 14em;
+  margin: 0 auto;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 100em;
+}
+
+.brief-intro h1 {
+  font-size: 3rem;
+  color: gray;
+}
+
+.brief-intro p {
+  font-size: 1.2rem;
+  color: white;
+}
+
+.company-list ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.brief-intro input {
+  padding: 1rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 1.2rem;
+  border-radius: 20px;
+  border: none;
+  background-color: rgb(37, 48, 254);
+  margin: 2.5% auto;
+  cursor: pointer;
+  z-index: -1;
+  animation: zoom infinite 0.5s;
+}
+
+.display-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+#testimonials {
+  padding: 10px;
+  background-color: rgba(51, 61, 250, 0.5);
+  scroll-margin: 8rem;
+}
+
+.user-feedbacks {
+  align-items: center;
+}
+
+.project-img {
+  background-image: url("/static/image/project1.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 20em;
+}
+
+.user-feedback {
+  display: flex;
+  background-color: #fff;
+  min-height: 250px;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.9);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.push-down {
+  margin-top: 25px;
+  padding: 20px;
+}
+
+.push-down p {
+  text-align: start;
+}
+
+nav a {
+  color: #007BFF;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+  animation: zoom 1s infinite;
+}
+
+#recent-work {
+  scroll-margin: 7rem;
+  width: 100%;
+}
+
+.work {
+  width: 100%;
+}
+
+.recent-work-container {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  scroll-margin-top: 10rem;
+}
+
+.button-style {
+  padding: 5px;
+  font-size: 1.2em;
+  border: none;
+  background-color: rgb(185, 181, 254);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.5em;
+}
+
+.get-in-touch {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+form input {
+  width: 100%;
+  outline: none;
+  border: none;
+  height: 2em;
+}
+
+textarea {
+  outline: none;
+  padding: 0.2rem;
+}
+
+.send {
+  margin: auto;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  width: 15em;
+  border: none;
+  background-color: rgb(37, 48, 254);
+  cursor: pointer;
+}
+
+.arrow-up {
+  background-color: rgb(37, 48, 254);
+  font-size: 1rem;
+  border-radius: 3px;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+  position: static;
+}
+
+.arrow-up a {
+  display: flex;
+  flex-direction: column;
+  color: wheat;
+  padding: 2px;
+  text-decoration: none;
+}
+
+@keyframes zoom {
+  0% {
+    scale: 1.1;
+  }
+  50% {
+    scale: 1;
+  }
+  100% {
+    scale: 1.1;
+  }
+}
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .navlist {
+    font-size: 0.9rem;
+    gap: 10px;
+  }
+  nav ul li {
+    flex-direction: column;
+  }
+  .display-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  .display-grid > *:last-child {
+    grid-column: 1/-1;
+  }
+  .brief-intro h1 {
+    font-size: 2rem;
+  }
+  .brief-intro p {
+    font-size: 1rem;
+  }
+  .brief-intro input {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+  .send {
+    width: 60%;
+  }
+  .push-down p {
+    text-align: center;
+  }
+  .company-list ul {
+    flex-direction: row;
+  }
+  .company-list ul li {
+    margin: 10px 0;
+  }
+  .recent-work-container {
+    flex-direction: column;
+  }
+  .get-in-touch p {
+    width: 100%;
+  }
+  #get-in-touch p {
+    width: 20em;
+  }
+}/*# sourceMappingURL=style.css.map */
