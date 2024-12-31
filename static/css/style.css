@@ -392,7 +392,7 @@ textarea {
     font-size: 1rem;
   }
   .send {
-    width: 60%;
+    width: fit-content;
   }
   .push-down p {
     text-align: center;
@@ -445,7 +445,6 @@ textarea {
 #comments .send {
   font-size: 1.2rem;
   border-radius: 50px;
-  width: 15em;
   border: none;
   background-color: var(--button-background-color);
   cursor: pointer;
