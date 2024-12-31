@@ -215,7 +215,7 @@ button, .button-style, .send {
 
 .user-feedback {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: space-between;
   background-color: var(--testimonial-background-color);
   min-height: 15.625em;
@@ -235,9 +235,8 @@ button, .button-style, .send {
 
 .user-info {
   display: flex;
-  text-align: left;
   align-items: center;
-  justify-content: left;
+  justify-content: center;
   gap: 10px;
 }
 
@@ -287,7 +286,7 @@ form {
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 100%; /* Ensure form width is within the parent */
   gap: 0.5em;
   margin: 0 auto;
 }
@@ -297,7 +296,7 @@ form input, form textarea, form select {
   outline: none;
   border: none;
   padding: 0.5em;
-  background: rgba(0, 0, 0, 0.1);
+  /* background: rgba(0, 0, 0, 0.1); */
   border-bottom: 1px solid #ccc;
   transition: all 0.3s ease;
 }
@@ -326,7 +325,10 @@ form label {
   background-color: rgba(0, 0, 0, 0.1);
   padding: 10px;
 }
-
+.get-in-touch form{
+  margin: auto;
+  width: 90%;
+}
 textarea {
   outline: none;
   padding: 0.2rem;
@@ -412,7 +414,6 @@ textarea {
   }
   form {
     width: 100%;
-    margin: 0;
   }
 }
 
@@ -420,28 +421,28 @@ textarea {
   width: 100%;
 }
 
+/* Comments */
 #comments {
   background-color: rgba(51, 61, 250, 0.5);
-  scroll-margin: 8rem;
   width: 100%;
   color: rgb(5, 5, 5);
-  /* padding: 1em; */
 }
 
 #comments form {
   display: flex;
   flex-direction: column;
+  gap: 0.5em;
 }
 
 #comments input, #comments textarea {
-  width: 100%;
+  margin: auto;
+  width: 90%;
   outline: none;
   border: none;
   padding: 0.5em;
 }
 
 #comments .send {
-  /* margin: auto; */
   font-size: 1.2rem;
   border-radius: 50px;
   width: 15em;
