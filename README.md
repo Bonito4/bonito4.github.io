@@ -19,7 +19,7 @@ These are some of the skills I have acquired:
 - Javascript
 
 ## Contact
-Feel free to reach out to me via [boniface.tim24@gmail.com](mailto:email@example.com) or connect with me on [LinkedIn](https://www.linkedin.com/in/otim-boniface-43bbb6329/).
+Feel free to reach out to me via boniface.tim24@gmail.com (mailto:boniface.tim24@gmail.com) or connect with me on LinkedIn on https://www.linkedin.com/in/otim-boniface-43bbb6329/.
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
