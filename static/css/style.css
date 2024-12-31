@@ -75,10 +75,9 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: auto;
   flex-direction: column;
   gap: 55px;
-  width: 75%;
+  /* width: 75%; */
 }
 
 /* Navigation */
