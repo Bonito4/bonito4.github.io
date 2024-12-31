@@ -124,14 +124,14 @@ h1, h2 {
   font-size: 1.2rem;
   border-radius: 20px;
   border: none;
-  background-color: rgb(37, 48, 254);
+  background-color: rgba(255, 68, 0, 1);
   margin: 2.5% auto;
   cursor: pointer;
   animation: zoom infinite 0.5s;
 }
 .get-started:hover{
   color: white;
-  background-color: rgba(255, 68, 0, 1);
+  background-color: rgba(255, 68, 0, .8);
 }
 
 .display-grid {
