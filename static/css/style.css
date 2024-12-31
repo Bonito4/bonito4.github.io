@@ -117,7 +117,7 @@ h1, h2 {
   justify-content: space-around;
 }
 
-.brief-intro input {
+.brief-intro button {
   padding: 1rem;
   width: -moz-fit-content;
   width: fit-content;
@@ -129,6 +129,10 @@ h1, h2 {
   cursor: pointer;
   z-index: -1;
   animation: zoom infinite 0.5s;
+}
+.brief-intro button:hover{
+  color: white;
+  background-color: orangered;
 }
 
 .display-grid {
