@@ -120,19 +120,17 @@ h1, h2 {
 .get-started {
   padding: 1rem;
   width: -moz-fit-content;
-  width: fit-content;
   font-size: 1.2rem;
   border-radius: 20px;
   border: none;
   background-color: rgb(37, 48, 254);
   margin: 2.5% auto;
   cursor: pointer;
-  z-index: -1;
   animation: zoom infinite 0.5s;
 }
 .get-started:hover{
   color: white;
-  background-color: orangered;
+  background-color: orangegreen;
 }
 
 .display-grid {
