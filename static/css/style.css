@@ -701,11 +701,14 @@ textarea {
     min-height: 200px;
   }
 
-  .get-in-touch {
-    /* padding: 2rem 1rem; */
-    width: fit-content; /* Use all available width */
+  #get-in-touch {
+    margin: 0;
+    width: 100%;
   }
-
+  
+  form{
+    width: 100%;
+  }
   .send {
     width: 100%; /* Use all available width */
     max-width: 200px;
@@ -769,7 +772,7 @@ textarea {
   }
 
   form {
-    width: 100%;
+    width: 90%;
   }
 
   .send {
