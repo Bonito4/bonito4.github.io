@@ -119,3 +119,21 @@ function checkMobile() {
 
 window.addEventListener('load', checkMobile);
 window.addEventListener('resize', checkMobile);
+
+// Automatic scrolling of the work section
+document.addEventListener('DOMContentLoaded', () => {
+  const workContainer = document.querySelector('.scrolling-work-container');
+  const workItems = document.querySelectorAll('.scrolling-work-item');
+  const indicators = document.querySelectorAll('.scrolling-work-indicator');
+  let currentIndex = 0;
+
+  function scrollWork() {
+    currentIndex = (currentIndex + 1) % workItems.length;
+    workContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+    indicators.forEach((indicator, index) => {
+      indicator.classList.toggle('active', index === currentIndex);
+    });
+  }
+
+  setInterval(scrollWork, 3000); // Change image every 3 seconds
+});
