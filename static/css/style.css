@@ -702,25 +702,17 @@ textarea {
   }
 
   .get-in-touch {
-    padding: 2rem 1rem;
-    margin: 0 1rem;
-    align-items: center; /* Center align items on mobile */
-  }
-
-  form {
-    width: 90%;
-    margin: 0 auto;
-    padding: 0 1rem;
+    /* padding: 2rem 1rem; */
+    width: fit-content; /* Use all available width */
   }
 
   .send {
-    width: 100%;
+    width: 100%; /* Use all available width */
     max-width: 200px;
     min-width: unset;
   }
 }
 
-/* Enhanced Media Queries */
 @media screen and (max-width: 1200px) {
   .brief-intro {
     max-width: 90%;
