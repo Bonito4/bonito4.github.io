@@ -1,53 +1,92 @@
-// Initialize AOS
-AOS.init({
-    once: true,
-    offset: 100,
-    duration: 800
+// Initialize all components
+document.addEventListener('DOMContentLoaded', () => {
+    // AOS initialization
+    AOS.init({
+        once: true,
+        offset: 100,
+        duration: 800
+    });
+
+    // Typing effect
+    new Typewriter('#typing-text', {
+        strings: ['BONIFACE OTIM', 'WEB DEVELOPER', 'DATA SPECIALIST'],
+        autoStart: true,
+        loop: true,
+        delay: 75
+    });
+
+    // Initialize all event listeners
+    initScrollListeners();
+    initFormHandlers();
+    initSmoothScroll();
+    checkMobile();
 });
 
-// Smooth scroll for navigation
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+// Initialize scroll event listeners
+function initScrollListeners() {
+    window.addEventListener('scroll', () => {
+        handleScrollProgress();
+        handleNavHighlight();
+    });
+}
+
+// Initialize smooth scroll
+function initSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').slice(1);
+            const targetSection = document.getElementById(targetId);
+            
+            if (targetSection) {
+                updateActiveNavLink(this);
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
         });
     });
-});
+}
+
+// Update active navigation link
+function updateActiveNavLink(clickedLink) {
+    document.querySelectorAll('.navlist a').forEach(link => {
+        link.classList.remove('active');
+    });
+    clickedLink.classList.add('active');
+}
 
 // Loader
 window.addEventListener('load', () => {
-    document.querySelector('.loader').style.opacity = '0';
-    setTimeout(() => {
-        document.querySelector('.loader').style.display = 'none';
-    }, 500);
-});
-
-// Typing effect
-new Typewriter('#typing-text', {
-    strings: ['BONIFACE OTIM', 'WEB DEVELOPER', 'DATA SPECIALIST'],
-    autoStart: true,
-    loop: true,
-    delay: 75
+    const loader = document.querySelector('.loader');
+    if (loader) {
+        loader.style.opacity = '0';
+        setTimeout(() => {
+            loader.style.display = 'none';
+        }, 500);
+    }
 });
 
 // Scroll progress
-window.addEventListener('scroll', () => {
-    const winScroll = document.documentElement.scrollTop;
-    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = (winScroll / height) * 100;
-    document.querySelector('.progress-bar').style.width = scrolled + '%';
-});
+function handleScrollProgress() {
+    const progressBar = document.querySelector('.progress-bar');
+    if (progressBar) {
+        const winScroll = document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        progressBar.style.width = scrolled + '%';
+    }
+}
 
-// Improved navigation highlighting
-const sections = document.querySelectorAll('main > div[id]');
-window.addEventListener('scroll', () => {
+// Navigation highlighting
+function handleNavHighlight() {
+    const sections = document.querySelectorAll('main > div[id]');
+    const scrollY = window.pageYOffset;
+    
     let current = '';
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        const scrollY = window.pageYOffset;
-        
         if (scrollY >= sectionTop - 100) {
             current = section.getAttribute('id');
         }
@@ -59,57 +98,38 @@ window.addEventListener('scroll', () => {
             link.classList.add('active');
         }
     });
-});
-
-// Update scroll behavior
-document.querySelectorAll('.navlist a').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href').slice(1);
-        const targetSection = document.getElementById(targetId);
-        
-        document.querySelectorAll('.navlist a').forEach(link => {
-            link.classList.remove('active');
-        });
-        
-        this.classList.add('active');
-        
-        targetSection.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        });
-    });
-});
+}
 
 // Form submission
-document.getElementById('contactForm').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const formMessage = document.getElementById('formMessage');
-    try {
-        // Add your form submission logic here
-        formMessage.textContent = 'Message sent successfully!';
-        formMessage.style.display = 'block';
-        formMessage.style.color = 'green';
-    } catch (error) {
-        formMessage.textContent = 'Error sending message. Please try again.';
-        formMessage.style.display = 'block';
-        formMessage.style.color = 'red';
+function initFormHandlers() {
+    const form = document.getElementById('contactForm');
+    if (form) {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formMessage = document.getElementById('formMessage');
+            if (formMessage) {
+                try {
+                    // Add your form submission logic here
+                    formMessage.textContent = 'Message sent successfully!';
+                    formMessage.style.display = 'block';
+                    formMessage.style.color = 'green';
+                } catch (error) {
+                    formMessage.textContent = 'Error sending message. Please try again.';
+                    formMessage.style.display = 'block';
+                    formMessage.style.color = 'red';
+                }
+            }
+        });
     }
-});
+}
 
-// Initialize tilt effect
-VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
-    max: 15,
-    speed: 400
-});
-
-// Handle navigation menu on mobile
+// Handle mobile navigation
 function checkMobile() {
     if (window.innerWidth <= 768) {
         document.querySelectorAll('.navlist a').forEach(link => {
             link.addEventListener('click', () => {
                 const nav = document.querySelector('.navigator');
-                if (nav.classList.contains('active')) {
+                if (nav && nav.classList.contains('active')) {
                     nav.classList.remove('active');
                 }
             });
@@ -117,23 +137,5 @@ function checkMobile() {
     }
 }
 
-window.addEventListener('load', checkMobile);
+// Handle window resize
 window.addEventListener('resize', checkMobile);
-
-// Automatic scrolling of the work section
-document.addEventListener('DOMContentLoaded', () => {
-  const workContainer = document.querySelector('.scrolling-work-container');
-  const workItems = document.querySelectorAll('.scrolling-work-item');
-  const indicators = document.querySelectorAll('.scrolling-work-indicator');
-  let currentIndex = 0;
-
-  function scrollWork() {
-    currentIndex = (currentIndex + 1) % workItems.length;
-    workContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
-    indicators.forEach((indicator, index) => {
-      indicator.classList.toggle('active', index === currentIndex);
-    });
-  }
-
-  setInterval(scrollWork, 3000); // Change image every 3 seconds
-});
