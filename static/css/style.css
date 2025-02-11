@@ -142,7 +142,7 @@ social-links a::after {
 }
 
 main {
-
+    margin: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -202,6 +202,9 @@ main > div:not(:last-child)::after {
     background: rgba(255, 255, 255, 0.1);
 }
 
+.project-img > span{
+  background-color: #112240;
+}
 ul {
   display: flex;
   list-style: none;
@@ -279,6 +282,17 @@ h1, h2 {
 
 .navlist a.active::before {
   width: 100%;
+}
+
+.navlist a i {
+    margin-right: 0.5rem;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.navlist a:hover i {
+    transform: translateY(-2px);
+    color: var(--primary-color);
 }
 
 .align-center {
@@ -458,15 +472,24 @@ h1, h2 {
 
 /* Add variations for different projects */
 .project-img.project-1 {
-  background: linear-gradient(45deg, #0a192f, #3a6073);
+  background: url("../image/blog.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-clip: content-box;
 }
 
 .project-img.project-2 {
-  background: linear-gradient(45deg, #112240, #1a365d);
+  background: url("../image/todo_list.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-clip: content-box;
 }
 
 .project-img.project-3 {
-  background: linear-gradient(45deg, #0a192f, #2c5282);
+  background: url("../image/weather.jpg");
+  /* background-position: center; */
+  background-repeat: no-repeat;
+  background-clip: content-box;
 }
 
 /* Add project categories like blog */
@@ -990,15 +1013,15 @@ textarea {
     overflow: hidden;
 }
 
-.project-img::after {
+/* .project-img::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     height: 50%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
-}
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent), url("../image/todo_list.jpg");
+} */
 
 .work legend {
     font-size: 1.2rem;
@@ -1603,6 +1626,97 @@ main > div {
     header h3 {
         font-size: 0.9rem;
     }
+}
+
+/* ...existing code... */
+
+/* ...existing code... */
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: rgba(17, 34, 64, 0.95);
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 800px;
+    width: 90%;
+    position: relative;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 0 30px rgba(0, 123, 255, 0.3);
+}
+
+.close-modal {
+    position: absolute;
+    right: 1.5rem;
+    top: 1rem;
+    font-size: 2rem;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.close-modal:hover {
+    color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+.modal-image {
+    height: 250px;
+    background: linear-gradient(45deg, #0a192f, #3a6073);
+    border-radius: 8px;
+    margin: 1rem 0;
+    position: relative;
+}
+
+.modal-body {
+    margin-top: 1.5rem;
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.project-links a {
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    color: var(--text-light);
+    text-decoration: none;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.project-links a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+}
+
+.work {
+    cursor: pointer;
 }
 
 /* ...existing code... */

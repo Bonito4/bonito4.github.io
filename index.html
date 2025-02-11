@@ -20,22 +20,33 @@
             <button id="close-popup">Continue Exploring</button>
         </div>
     </div>
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="modal-title"></h2>
+            <div class="modal-image">
+                <div id="modal-category" class="project-category"></div>
+            </div>
+            <div class="modal-body">
+                <p id="modal-description"></p>
+                <div class="project-links">
+                    <a id="live-link" href="#" target="_blank" rel="noopener">Live Demo <i class="fas fa-external-link-alt"></i></a>
+                    <a id="github-link" href="#" target="_blank" rel="noopener">Source Code <i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="loader">
         <div class="spinner"></div>
     </div>
     <div class="progress-bar"></div>
 
     <nav class="navigator" data-aos="fade-up">
-        <!-- <div class="nav-container">
-            <button class="nav-toggle" aria-label="Toggle Navigation">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div> -->
         <ul class="navlist">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#recent-work">Work</a></li>
-            <li><a href="#get-in-touch">Contact</a></li>
+            <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#skills"><i class="fas fa-tools"></i> Skills</a></li>
+            <li><a href="#recent-work"><i class="fas fa-briefcase"></i> Work</a></li>
+            <li><a href="#get-in-touch"><i class="fas fa-envelope"></i> Contact</a></li>
         </ul>
     </nav>
     <header data-aos="fade-up" data-aos-duration="1000">
@@ -176,21 +187,36 @@
             <p class="align-center">Here are some of the projects I've been working on recently. Each project showcases my skills and dedication to creating impactful solutions.</p>
 
             <div class="recent-work-container display-grid">
-                <div class="work">
+                <div class="work" 
+                    data-title="Personal Blog Website"
+                    data-description="My first responsive website built with HTML and CSS. This project helped me understand core web development concepts and responsive design principles. Features include responsive design, custom CSS animations, and optimized performance."
+                    data-category="HTML & CSS"
+                    data-live-link="https://example.com/blog"
+                    data-github-link="https://github.com/yourusername/blog">
                     <div class="project-img project-1">
                         <span class="project-category">HTML & CSS</span>
                     </div>
                     <legend>Project 1: Personal Blog Website</legend>
                     <p>My first responsive website built with HTML and CSS. This project helped me understand core web development concepts and responsive design principles.</p>
                 </div>
-                <div class="work">
+                <div class="work" 
+                    data-title="To-Do List App"
+                    data-description="A simple but functional to-do list application using JavaScript. This project taught me about DOM manipulation and basic CRUD operations."
+                    data-category="JavaScript"
+                    data-live-link="https://example.com/todo"
+                    data-github-link="https://github.com/yourusername/todo">
                     <div class="project-img project-2">
                         <span class="project-category">JavaScript</span>
                     </div>
                     <legend>Project 2: To-Do List App</legend>
                     <p>A simple but functional to-do list application using JavaScript. This project taught me about DOM manipulation and basic CRUD operations.</p>
                 </div>
-                <div class="work">
+                <div class="work" 
+                    data-title="Weather Dashboard"
+                    data-description="A weather dashboard that fetches data from a public API. This project helped me learn about working with APIs and async JavaScript."
+                    data-category="Web Development"
+                    data-live-link="https://example.com/weather"
+                    data-github-link="https://github.com/yourusername/weather">
                     <div class="project-img project-3">
                         <span class="project-category">Web Development</span>
                     </div>

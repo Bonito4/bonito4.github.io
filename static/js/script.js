@@ -1,5 +1,8 @@
 // Initialize all components
 document.addEventListener('DOMContentLoaded', () => {
+    // Move popup initialization to the top
+    initDevelopmentPopup();
+    
     // AOS initialization
     AOS.init({
         once: true,
@@ -20,28 +23,32 @@ document.addEventListener('DOMContentLoaded', () => {
     initFormHandlers();
     initSmoothScroll();
     checkMobile();
+    initProjectModal();
+});
 
-    // Initialize popup
+function initDevelopmentPopup() {
     const popup = document.getElementById('development-popup');
     const closePopup = document.getElementById('close-popup');
     
-    // Show popup after a short delay
-    setTimeout(() => {
-        popup.classList.add('show');
-    }, 1000);
-    
-    // Close popup when button is clicked
-    closePopup.addEventListener('click', () => {
-        popup.classList.remove('show');
-    });
-    
-    // Also close popup when clicking outside
-    popup.addEventListener('click', (e) => {
-        if (e.target === popup) {
+    if (popup && closePopup) {
+        // Show popup after a short delay
+        setTimeout(() => {
+            popup.classList.add('show');
+        }, 1500); // Increased delay to ensure DOM is ready
+        
+        // Close popup when button is clicked
+        closePopup.addEventListener('click', () => {
             popup.classList.remove('show');
-        }
-    });
-});
+        });
+        
+        // Also close popup when clicking outside
+        popup.addEventListener('click', (e) => {
+            if (e.target === popup) {
+                popup.classList.remove('show');
+            }
+        });
+    }
+}
 
 // Initialize scroll event listeners
 function initScrollListeners() {
@@ -160,3 +167,35 @@ function checkMobile() {
 
 // Handle window resize
 window.addEventListener('resize', checkMobile);
+
+// Initialize project modal functionality
+function initProjectModal() {
+    const modal = document.getElementById('project-modal');
+    const closeBtn = document.querySelector('.close-modal');
+    const works = document.querySelectorAll('.work');
+    
+    works.forEach(work => {
+        work.addEventListener('click', () => {
+            const data = work.dataset;
+            
+            document.getElementById('modal-title').textContent = data.title;
+            document.getElementById('modal-description').textContent = data.description;
+            document.getElementById('modal-category').textContent = data.category;
+            document.getElementById('live-link').href = data.liveLink;
+            document.getElementById('github-link').href = data.githubLink;
+            
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+    
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+    
+    function closeModal() {
+        modal.classList.remove('show');
+        document.body.style.overflow = '';
+    }
+}
