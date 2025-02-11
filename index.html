@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#007bff">
     <title>Bonito's Portfolio</title>
+    <link rel="shortcut icon" href="/static/image/image2.jpg" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="../static/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -12,12 +13,19 @@
 </head>
 
 <body>
+    <div id="development-popup" class="popup">
+        <div class="popup-content">
+            <h3>🚧 Portfolio Under Development 🚧</h3>
+            <p>Welcome! This portfolio is currently being updated with new projects and features. Feel free to explore what's available so far.</p>
+            <button id="close-popup">Continue Exploring</button>
+        </div>
+    </div>
     <div class="loader">
         <div class="spinner"></div>
     </div>
     <div class="progress-bar"></div>
 
-    <nav class="navigator" data-aos="fade-in">
+    <nav class="navigator" data-aos="fade-up">
         <!-- <div class="nav-container">
             <button class="nav-toggle" aria-label="Toggle Navigation">
                 <i class="fas fa-bars"></i>
@@ -30,11 +38,11 @@
             <li><a href="#get-in-touch">Contact</a></li>
         </ul>
     </nav>
-    <header data-aos="fade-down" data-aos-duration="1000">
-        <section class="hero-left" data-aos="fade-right" data-aos-delay="200">
+    <header data-aos="fade-up" data-aos-duration="1000">
+        <section class="hero-left" data-aos="fade-up" data-aos-delay="200">
             <div class="profile-img"></div>
         </section>
-        <h1><span id="typing-text">BONIFACE OTIM</span></h1>
+        <h1><span id="typing-text">GRAPHIC DESIGNER</span></h1>
         <h3>Website design | Graphic design | Data Operation</h3>
         <p>Exploring, Innovating, and Creating</p>
         <ul class="social-links">
@@ -50,23 +58,25 @@
     <main>
         <div id="home" class="intro-sect" data-aos="fade-up" data-aos-duration="1200">
             <div class="brief-intro">
-                <section class="hero-right" data-aos="fade-left" data-aos-delay="400">
+                <section class="hero-right" data-aos="fade-up" data-aos-delay="400">
                     <h1>Welcome to My Portfolio</h1>
                     <p>
-                        Hello! I'm Boniface, an aspiring software developer at the beginning of my tech journey. 
-                        I'm passionate about learning and growing in the field of web development and data operations.
+                        Hello! I'm Boniface, a creative professional specializing in graphic design and web development. 
+                        With a passion for visual storytelling and digital innovation, I create engaging designs that make an impact.
                     </p>
                     <p>
-                        I'm currently focusing on building my foundation in programming through self-study and hands-on projects. 
-                        I've been learning HTML, CSS, Python and JavaScript, which have enabled me to create responsive and user-friendly websites.
+                        My expertise spans across graphic design using Adobe Creative Suite (Photoshop & Illustrator) for brand identity, 
+                        logo design, and marketing materials. I combine this with web development skills in HTML, CSS, and JavaScript 
+                        to deliver comprehensive digital solutions.
                     </p>
                     <p>
-                        While I may be new to the field, my enthusiasm for technology and problem-solving drives me to continuously learn 
-                        and improve. I believe in the power of persistence and am dedicated to developing my skills one step at a time.
+                        I'm particularly passionate about creating cohesive brand experiences, from visual identity development 
+                        to responsive web design. My background in data operations also allows me to approach design with both 
+                        creativity and analytical thinking.
                     </p>
                     <p>
-                        I'm excited to share my learning journey and the projects I've been working on as I grow in this field. 
-                        Each project represents a new challenge tackled and a new skill learned.
+                        Whether it's crafting a striking logo, designing marketing materials, or building user-friendly websites, 
+                        I'm dedicated to delivering high-quality work that meets client objectives and exceeds expectations.
                     </p>
                     <input type="button" value="Explore My Work ➜" onclick="document.getElementById('recent-work').scrollIntoView({behavior: 'smooth'})">
                 </section>

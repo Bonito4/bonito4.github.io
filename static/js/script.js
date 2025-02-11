@@ -9,10 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Typing effect
     new Typewriter('#typing-text', {
-        strings: ['BONIFACE OTIM', 'WEB DEVELOPER', 'DATA SPECIALIST'],
+        strings: ['GRAPHIC DESIGNER', 'WEB DEVELOPER', 'DATA SPECIALIST'],
         autoStart: true,
         loop: true,
-        delay: 75
+        delay: 60
     });
 
     // Initialize all event listeners
@@ -20,6 +20,27 @@ document.addEventListener('DOMContentLoaded', () => {
     initFormHandlers();
     initSmoothScroll();
     checkMobile();
+
+    // Initialize popup
+    const popup = document.getElementById('development-popup');
+    const closePopup = document.getElementById('close-popup');
+    
+    // Show popup after a short delay
+    setTimeout(() => {
+        popup.classList.add('show');
+    }, 1000);
+    
+    // Close popup when button is clicked
+    closePopup.addEventListener('click', () => {
+        popup.classList.remove('show');
+    });
+    
+    // Also close popup when clicking outside
+    popup.addEventListener('click', (e) => {
+        if (e.target === popup) {
+            popup.classList.remove('show');
+        }
+    });
 });
 
 // Initialize scroll event listeners
