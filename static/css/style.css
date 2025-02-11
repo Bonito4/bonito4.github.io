@@ -47,7 +47,7 @@ body::before {
 
 header {
   background: 
-    linear-gradient(135deg, rgba(2, 6, 43, 0.8), rgba(7, 0, 53, 0.9)),
+    linear-gradient(135deg, rgba(14, 10, 77, 0.8), rgba(7, 0, 53, 0.9)),
     url("/static/image/background.jpg");
   background-size: cover;
   background-position: center;
@@ -72,7 +72,7 @@ header::before {
   bottom: 0;
   background: 
     radial-gradient(circle at 50% 50%, rgba(0, 4, 255, 0.15) 0%, transparent 90%),
-    linear-gradient(135deg, rgba(9, 14, 77, 0.6), rgba(7, 0, 53, 0.7)); /* Reduced opacity */
+    linear-gradient(135deg, rgba(9, 14, 77, 0.2), rgba(7, 0, 53, 0.7)); /* Reduced opacity */
   animation: pulse 3s infinite;
 }
 
@@ -557,7 +557,6 @@ nav a:hover {
 
 .recent-work-container {
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.1);
   scroll-margin-top: 10rem;
 }
 
@@ -970,7 +969,7 @@ textarea {
 
 .work {
     background: rgba(17, 34, 64, 0.7);
-    backdrop-filter: blur(5px);
+    backdrop-filter: none;
     border-radius: 15px;
     overflow: hidden;
     transition: var(--transition);
@@ -981,8 +980,8 @@ textarea {
 .work:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    background: rgba(17, 34, 64, 0.9);
-    border-color: rgba(100, 255, 255, 0.2);
+    border-color: var(--primary-color);
+    background: rgba(17, 34, 64, 0.7);
 }
 
 .project-img {
